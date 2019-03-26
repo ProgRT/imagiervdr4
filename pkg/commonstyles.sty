@@ -1,0 +1,24 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{commonstyles}[2019/03/18 Styles prédéfinits pour la mise en forme d'une présentation avec Beamer et Tikz]
+
+\RequirePackage{palettechum}
+\RequirePackage{pgfplots}
+
+\pgfplotsset{
+	every axis/.append style={
+			width=\textwidth,
+			height= .7 \textheight,
+			grid=none,
+			enlarge x limits=false,
+			enlarge y limits=upper,
+			font = \footnotesize,
+			xlabel=Temps (s),
+			ylabel=Pression (hPa)
+	},
+	every axis plot post/.append style={
+			structure.fg,
+			mark=none, 
+	},
+}
+
+\tikzstyle{plage}=[<->, shorten <=0.25mm, shorten >=0.25mm]

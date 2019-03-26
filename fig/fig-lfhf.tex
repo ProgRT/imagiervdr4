@@ -1,0 +1,39 @@
+\pgfplotsset{lfhf/.style={
+			height = 0.42 \textheight,
+			enlarge y limits = {value=0.9, upper},
+			ylabel=Pression (hPa),
+}}
+
+\newcommand{\istart}{2}
+\newcommand{\tic}{2}
+\begin{tikzpicture}
+	\begin{axis}[lfhf, xlabel=]
+
+		\addplot +[]table[x=time, y=Pao] {dat/simvent1.dat};
+		\draw [plage](axis cs:\istart,45) -- (axis cs:\istart + \tic, 45) node[midway, above] {Inspi.};
+		\draw [plage](axis cs:\istart + \tic,45) -- (axis cs:\istart + 2*\tic, 45) node[midway, above] {Expi.};
+
+		\draw [dashed] 
+		(axis cs: \istart,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\istart,0)
+		(axis cs: \istart + \tic,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\istart + \tic,0)
+		(axis cs: \istart + 2 *\tic,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\istart + 2*\tic,0);
+	\end{axis}
+
+\end{tikzpicture}
+\vskip 0.25em
+
+\newcommand{\pstart}{2.085}
+\newcommand{\tip}{0.059}
+
+\begin{tikzpicture}
+\begin{axis}[lfhf, xlabel=Temps (s)]
+	\addplot +[restrict x to domain=1:3]table[x=time, y=Pao] {dat/simvent1.dat};
+	\draw [dashed] 
+		(axis cs: \pstart,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\pstart,0)
+		(axis cs: \pstart + \tip,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\pstart + \tip,0)
+		(axis cs: \pstart + 2 *\tip,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\pstart + 2*\tip,0);
+		\draw [plage] (axis cs:\pstart,45) -- (axis cs:\pstart + \tip, 45) node[midway, above] {i};
+		\draw [plage](axis cs:\pstart + \tip,45) -- (axis cs:\pstart + 2*\tip, 45) node[midway, above] {e};
+
+\end{axis}
+\end{tikzpicture}

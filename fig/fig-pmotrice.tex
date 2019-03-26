@@ -1,0 +1,18 @@
+\newcommand{\pexp}{5}
+\newcommand{\pins}{18}
+\newcommand{\arrpos}{1}
+
+\begin{tikzpicture}
+	\begin{axis}[]
+
+		\addplot +[restrict x to domain=0:5]table[x=time, y=Pao] {dat/simvent1.dat};
+
+
+		\draw [dashed] 
+		(axis cs: \pgfkeysvalueof{/pgfplots/xmin},\pexp) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax},\pexp)
+		(axis cs: \pgfkeysvalueof{/pgfplots/xmin},\pins) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax},\pins);
+
+		\draw [->](axis cs:\arrpos,\pexp) -- (axis cs:\arrpos, \pins) node [midway, left]{$P_{motrice}$};
+	\end{axis}
+
+\end{tikzpicture}
