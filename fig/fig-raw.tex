@@ -1,23 +1,18 @@
-\pgfplotsset{raw/.style={
-}}
-\begin{minipage}{0.48\textwidth}
 	\begin{tikzpicture}
-		\begin{axis}[
-				raw,
-				title=Résistances normales
-				]
-			\addplot +[restrict x to domain=1.5:4]table[x=time, y=Pao] {dat/raw5.dat};
-		\end{axis}
+		\begin{groupplot}[
+				group style={
+					group size=2 by 1
+				},
+				width=0.48\textwidth,
+				restrict x to domain=1.5:4,
+				every axis plot post/.style={
+					mark=none
+				}
+			]
+			\nextgroupplot[title=Résistances normales]
+			\addplot table[x=time, y=Pao] {dat/raw5.dat};
+
+		 \nextgroupplot[title=Résistances augmentées]
+			\addplot table[x=time, y=Pao] {dat/raw15.dat};
+		\end{groupplot}
 	\end{tikzpicture}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-	\begin{tikzpicture}
-		\begin{axis}[
-				raw,
-				title=Résistances augmentées
-				]
-			\addplot +[restrict x to domain=1.5:4]table[x=time, y=Pao] {dat/raw15.dat};
-		\end{axis}
-	\end{tikzpicture}
-\end{minipage}

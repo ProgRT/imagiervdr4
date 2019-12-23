@@ -6,18 +6,28 @@
 
 \pgfplotsset{
 	every axis/.append style={
-			width=\textwidth,
-			height= .7 \textheight,
-			grid=none,
-			enlarge x limits=false,
-			enlarge y limits=upper,
-			font = \footnotesize,
-			xlabel=Temps (s),
-			ylabel=Pression (hPa)
+		black!85,
+		width=\textwidth,
+		height= .7 \textheight,
+		grid=none,
+		enlarge x limits=false,
+		enlarge y limits=upper,
+		font = \footnotesize,
+		xlabel=Temps (s),
+		ylabel=Pression (hPa),
+		extra y tick style={
+			grid=major, 
+			bleufoncechum,
+			},
+		major grid style={
+			bleufoncechum,
+			%thick,
+			%dash pattern=on 3pt off 1.5pt
+			}
 	},
-	every axis plot post/.append style={
-			structure.fg,
+	every axis plot/.style={
 			mark=none, 
+			line width=0.2mm,
 	},
 }
 

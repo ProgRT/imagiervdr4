@@ -7,8 +7,17 @@
 \usepackage{./pkg/commonstyles}
 \usepackage{./pkg/presstyle}
 
+\usepackage{vdr}	
+
 \usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{positioning}
 \usepackage[list-style=itemize, backref=true, mark-format={ }]{enotez}
+
+\usetikzlibrary{external}
+\tikzsetexternalprefix{pdffig/}
+\tikzexternalize
 
 \title{VDR-4 -- Imagier}
 \institute{}
@@ -22,12 +31,54 @@
 	\input{fig/fig-lfhf}
 \end{frame}
 
+\begin{frame}{Fonctionnement du phasitron}
+	\input{fig/fig-phasitron-coupe}
+\end{frame}
+
+\begin{frame}{Pressions moyennes}
+	\input{fig/fig-multimeter}
+\end{frame}
+
 \begin{frame}{Pression motrice}
 	\input{fig/fig-pmotrice}
 \end{frame}
 
+\begin{frame}{Ratio I:E normal et inversé}
+	\input{fig/fig-ie1}
+\end{frame}
+
+\begin{frame}{Ratio I:E normal et inversé}
+	\input{fig/fig-ieimg}
+\end{frame}
+
 \begin{frame}{Augmentation des résistances}
 	\input{fig/fig-raw}
+\end{frame}
+
+\begin{frame}{Cartouche pneumatique}
+	\input{fig/fig-cartouche}
+\end{frame}
+
+\begin{frame}[b]
+	%\frametitle{Circuit logique}
+	\centering
+	\includegraphics[height=\textheight]{img/circuit-logique.pdf}
+	\note {Pas si logique que ça}
+\end{frame}
+
+\begin{frame}{Paramètres d'amplitude}
+	\input{fig/fig-interaction}
+\end{frame}
+
+\begin{frame}[c]{Paramètre de cyclage haute fréquence}
+	\centering
+	\tikzset{external/remake next}
+	\input{fig/fig-controleie}
+\end{frame}
+
+\begin{frame}[c]{Séquence des ajustements}
+	\centering
+	\input{fig/fig-sequence}
 \end{frame}
 
 \end{document}
