@@ -1,5 +1,8 @@
 .PHONY: clean
 
+testfig.pdf: testfig.tex fig/*.tex
+	pdflatex testfig
+
 imagier.pdf: imagier.tex fig/*.tex pkg/*.sty
 	pdflatex --shell-escape imagier
 
@@ -13,4 +16,4 @@ multimeter.pdf: multimeter.tex
 	pdflatex multimeter
 
 clean:
-	rm -f *.log *.nav *.aux *.out *.snm *.toc *.ent
+	rm -f *.log *.nav *.aux *.out *.snm *.toc *.ent *.auxlock

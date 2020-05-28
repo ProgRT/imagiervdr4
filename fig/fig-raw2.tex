@@ -1,3 +1,4 @@
+\centering
 	\begin{tikzpicture}
 		\begin{groupplot}[
 				group style={
@@ -12,12 +13,12 @@
 				xlabel=Temps (s),
 				ylabel=Pression (hPa),
 				enlargelimits=false,
-				ymax=40
+				ymax=45,
 			]
 			\nextgroupplot[title=Résistances normales]
-			\addplot [color=marinechum] table[x=time, y=Pao, color=marinechum] {dat/raw5.dat};
+			\addplot [color=marinechum] table[x=time, y=Pao, color=marinechum] {dat/raw6.dat};
 
 		 \nextgroupplot[title=Résistances augmentées]
-			\addplot [color=marinechum] table[x=time, y=Pao, color=marinechum] {dat/raw15.dat};
+			\addplot [color=marinechum] table[x=time, y=Pao, color=marinechum] {dat/raw9.dat};
 		\end{groupplot}
 	\end{tikzpicture}

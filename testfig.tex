@@ -1,0 +1,34 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\usepackage{./pkg/commonstyles}
+\usepackage{./pkg/presstyle}
+
+\usepackage{vdr}	
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{positioning}
+\usepackage[list-style=itemize, backref=true, mark-format={ }]{enotez}
+
+\usetikzlibrary{external}
+\tikzsetexternalprefix{pdffig/}
+%\tikzexternalize
+
+\title{VDR-4 -- Imagier}
+\institute{}
+\titlegraphic{}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Ratio I:E normal et inversé}
+	\input{fig/fig-ieimg-annote}
+\end{frame}
+
+\end{document}
