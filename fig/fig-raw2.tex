@@ -15,10 +15,10 @@
 				enlargelimits=false,
 				ymax=45,
 			]
-			\nextgroupplot[title=Résistances normales]
+			\nextgroupplot[title={Raw = 6 hPa/l/s}]
 			\addplot [color=marinechum] table[x=time, y=Pao, color=marinechum] {dat/raw6.dat};
 
-		 \nextgroupplot[title=Résistances augmentées]
+			\nextgroupplot[title={Raw = 9 hPa/l/s}]
 			\addplot [color=marinechum] table[x=time, y=Pao, color=marinechum] {dat/raw9.dat};
 		\end{groupplot}
 	\end{tikzpicture}
